@@ -40,34 +40,24 @@ const Review = (props) => {
   return (
     <article className="review">
       <div className="person-img">
-        <img src={image} />
+        <img src={image} alt={name} />
       </div>
-      <div className="left">
-        <h4 className="author" id={`author-${id}`}>
-          {name}
-        </h4>
-        <p className="job">{job}</p>
-        <p className="text">{text}</p>
-        <div className="btn-grp">
-          {index && index > 0 ? (
-            <button onClick={prevReview} className="prev btn">
-              Previous
-            </button>
-          ) : (
-            ""
-          )}
-          {index < reviews.length - 1 ? (
-            <button onClick={nextReview} className="frw btn">
-              Forward
-            </button>
-          ) : (
-            ""
-          )}
-        </div>
-        <button className="random-btn" onClick={randomReview}>
-          Surprise Me
+      <h4 className="author" id={`author-${index}`}>
+        {name}
+      </h4>
+      <p className="job">{job}</p>
+      <p className="info">{text}</p>
+      <div>
+        <button className="prev-btn" onClick={prevReview}>
+          Previous
+        </button>
+        <button className="next-btn" onClick={nextReview}>
+          Next
         </button>
       </div>
+      <button className="random-btn" onClick={randomReview}>
+        Surprise Me
+      </button>
     </article>
   );
 };
