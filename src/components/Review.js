@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { ids } from "webpack";
 
 const Review = (props) => {
   const [index, setIndex] = useState(0);
@@ -41,24 +40,27 @@ const Review = (props) => {
   return (
     <article className="review">
       <div className="person-img">
-        <img src={image} alt={name} />
+        <img src={image} />
       </div>
-      <h4 className="author" id={`author-${id}`}>
-        {name}
-      </h4>
-      <p className="job">{job}</p>
-      <p className="info">{text}</p>
-      <div>
-        <button className="prev-btn" onClick={prevReview}>
-          Previous
-        </button>
-        <button className="next-btn" onClick={nextReview}>
-          Next
+      <div className="left">
+        <h4 className="author" id={`author-${id}`}>
+          {name}
+        </h4>
+        <p className="job">{job}</p>
+        <p className="info">{text}</p>
+        <div className="btn-grp">
+          <button onClick={prevReview} className="prev-btn">
+            Previous
+          </button>
+
+          <button onClick={nextReview} className="next-btn">
+            Forward
+          </button>
+        </div>
+        <button className="random-btn" onClick={randomReview}>
+          surprise me
         </button>
       </div>
-      <button className="random-btn" onClick={randomReview}>
-        surprise me
-      </button>
     </article>
   );
 };
