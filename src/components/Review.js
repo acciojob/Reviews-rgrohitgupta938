@@ -43,7 +43,7 @@ const Review = (props) => {
       <div className="person-img">
         <img src={image} alt={name} />
       </div>
-      <h4 className="author" id={`author-${ids}`}>
+      <h4 className="author" id={`author-${id}`}>
         {name}
       </h4>
       <p className="job">{job}</p>
